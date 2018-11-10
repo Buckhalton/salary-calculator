@@ -54,11 +54,11 @@ function calcCosts() {
         el.append(`<h3 class="card bg-danger">Total Monthly: $${totalMonthlyCost.toFixed(2)}</h3>`);
     } // end greater than 20000
     else {
-        el.append(`<h3>Total Monthly: $${totalMonthlyCost.toFixed(2)}</h3>`);
+        el.append(`<h3 class="card bg-success">Total Monthly: $${totalMonthlyCost.toFixed(2)}</h3>`);
     } // end less than 20000
 } // end calcCosts
 
-function displayEmployee(){
+function displayEmployee() {
     console.log('in displayEmployee');
     //target the table by ID
     let el = $('#employeeData');
