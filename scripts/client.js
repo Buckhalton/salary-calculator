@@ -52,9 +52,10 @@ function calcCosts() {
     el.empty();
     if(totalMonthlyCost > 20000){
         el.append(`<h3 class="red">Total Monthly: ${totalMonthlyCost.toFixed(2)}</h3>`);
-    } else {
+    } // end greater than 20000
+    else {
         el.append(`<h3>Total Monthly: ${totalMonthlyCost.toFixed(2)}</h3>`);
-    }
+    } // end less than 20000
 } // end calcCosts
 
 function displayEmployee(){
@@ -65,16 +66,20 @@ function displayEmployee(){
     el.empty();
     //loop through the employees and display each in the table
     for(employee of employees) {
-        let displayString = `<tr class="deleteEmployee" id="${employee.id}"><td>${employee.first}</td><td>${employee.last}</td><td>${employee.id}</td><td>${employee.title}</td><td>${employee.salary}</td><td><button id="${employee.id}" >Delete</button></td></tr>`;
+        let displayString = `<tr id="${employee.id}"><td>${employee.first}</td><td>${employee.last}</td><td>${employee.id}</td><td>${employee.title}</td><td>${employee.salary}</td><td><button id="${employee.id}" class="deleteEmployee">Delete</button></td></tr>`;
         el.append(displayString);
     } // end for of
 } // end displayEmployee
 
 function deleteEmployee() {
     for(employee of employees) {
-        console.log(this);
-    }
-}
+        if($(this).attr('id') === employee.id) {
+            let index = employees.indexOf(employee);
+            employees.splice(index, 1);
+            $(this).parent().parent().remove();
+        } // end employee match
+    } // end for of
+} // end deleteEmployee
 
 function handleReady() {
     $('#submitButton').on('click', addEmployee);
