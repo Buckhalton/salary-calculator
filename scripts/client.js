@@ -27,7 +27,6 @@ function addEmployee() {
         );
         //pushing new employees into the array
         employees.push(tempEmployee);
-            console.log('adding:', tempEmployee);
         // empty inputs
         $('#firstNameIn').val(''),
         $('#lastNameIn').val(''),
@@ -40,14 +39,11 @@ function addEmployee() {
 } // end addEmployee
 
 function calcCosts() {
-    console.log('In calcCosts');
     let totalAnnual = 0;
     for(employee of employees) {
         totalAnnual = parseInt(employee.salary) + totalAnnual;
-        console.log(totalAnnual);
     } // end for of
     let totalMonthlyCost = totalAnnual / 12;
-    console.log(totalMonthlyCost);
     let el = $('#monthlyCostOut');
     el.empty();
     if(totalMonthlyCost > 20000){
@@ -59,7 +55,6 @@ function calcCosts() {
 } // end calcCosts
 
 function displayEmployee() {
-    console.log('in displayEmployee');
     //target the table by ID
     let el = $('#employeeData');
     //empty the table
