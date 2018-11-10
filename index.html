@@ -10,38 +10,34 @@
     <script src="scripts/client.js"></script>
     <title>Salary Calculator</title>
 </head>
-<body>
-    <h1>Salary Calculator</h1>
-    <div id="inputDiv">
-        <h1>Add Employee</h1>
-        <input id="firstNameIn" type="text" placeholder="First Name"/>
-        <input id="lastNameIn" type="text" placeholder="Last Name"/>
-        <input id="idIn" type="text" placeholder="ID"/>
-        <input id="titleIn" type="text" placeholder="Title"/>
-        <input id="salaryIn" type="text" placeholder="Annual Salary"/>
-        <button id="submitButton">Submit</button>
+<body class="container">
+    <div class="jumbotron text-white bg-dark">
+        <h1>Salary Calculator</h1>
+        <div class="jumbotron text-white bg-dark" id="inputDiv">
+            <h1>Add Employee</h1>
+            <input id="firstNameIn" type="text" placeholder="First Name"/>
+            <input id="lastNameIn" type="text" placeholder="Last Name"/>
+            <input id="idIn" type="text" placeholder="ID"/>
+            <input id="titleIn" type="text" placeholder="Title"/>
+            <input id="salaryIn" type="text" placeholder="Annual Salary"/>
+            <button class="btn btn-success" id="submitButton">Submit</button>
+        </div>
     </div>
     <div id="outputDiv">
         <h1>Employees</h1>
-        <table>
-            <thead>
+        <table class="table table-striped table-light">
+            <thead class="thead-dark">
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>ID</th>
                 <th>Title</th>
                 <th>Annual Salary</th>
+                <th>Remove Employee</th>
             </thead>
             <tbody id="employeeData">
-                <tr>
-                    <td>This</td>
-                    <td>Is</td>
-                    <td>An</td>
-                    <td>Example</td>
-                    <td>Of a row</td>
-                </tr>
             </tbody>
         </table>
-        <h3 id="monthlyCostOut"></h3>
+        <h3 id="monthlyCostOut">Total Monthly: $0.00</h3>
     </div>
 </body>
 </html>
